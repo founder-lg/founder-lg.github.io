@@ -1,0 +1,122 @@
+/* 
+Для применения google шрифтов заходим на https://fonts.google.com/
+Ищем название понравившегося шрифта, например Michroma ->
+запоминаем название -> заходим на https://developers.google.com/fonts/docs/getting_started
+копируем метод, например https://fonts.googleapis.com/css?family=Roboto&display=swap
+где вместо Roboto подставляем название нашего шрифта,
+display=swap - запасной шрифт, на случай, если не подгрузится наш,
+копируем ссылку в @import url() и вызываем в body
+свойством font-family: выбраный шрифт, запасной
+*/
+@import url('https://fonts.googleapis.com/css?family=Michroma&display=swap');
+
+
+body {
+    font-family: Michroma, serif;
+    background: linear-gradient(90deg, #0844A9 0%, #151313 100%);
+}
+
+p {
+    color: white;
+}
+
+.nav-link {
+    color: white;
+}
+
+/* 
+Меняем цвет кнопки Home
+обращаемся к ней .nav-link.active
+и нифига. Открываем инспектор
+и видим что начальный стиль от bs
+имеет больший вес, а именно
+.navbar-nav .nav-link.active
+Мы пишем точно также и всё ОК
+Потому что наш css подключен
+ниже (в link) и имеет больший приоритет
+*/
+.navbar-nav .nav-link.active {
+    color: white;
+}
+
+.navbar-brand img {
+    width: 40px;
+}
+
+.navbar-toggler {
+    background-color: grey;
+}
+
+.sidebar {
+    color: white;
+    background: linear-gradient(270deg, #0844A9 0%, #151313 100%);
+}
+
+.card {
+    background: linear-gradient(270deg, #0844A9 0%, #151313 100%);
+    color: white;
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
+}
+.slide-text,
+.footer-text {
+    color: white;
+    margin: auto auto; /* зададим центральное положение по осям х и у от контейнера в котором находится тег <p> */
+}
+
+footer,
+.btn-outline-primary {
+    background: linear-gradient(270deg, #0844A9 0%, #151313 100%);
+
+}
+
+.media-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Делаем анимированную картинку. Заходим на https://webcode.tools/generators/css/keyframe-animation
+Выбираем нужную анимацию, копируем верхний код в .call-anim */
+.call-anim {
+    animation: myAnim 2s ease 0s infinite normal forwards; /* имя myAnim можно менять на своё  */
+}
+/* а нижний код вставляем просто ниже */
+@keyframes myAnim {
+	0%,
+	100% {
+		transform: translateX(0%);
+		transform-origin: 50% 50%;
+	}
+
+	15% {
+		transform: translateX(-30px) rotate(-6deg);
+	}
+
+	30% {
+		transform: translateX(15px) rotate(6deg);
+	}
+
+	45% {
+		transform: translateX(-15px) rotate(-3.6deg);
+	}
+
+	60% {
+		transform: translateX(9px) rotate(2.4deg);
+	}
+
+	75% {
+		transform: translateX(-6px) rotate(-1.2deg);
+	}
+}
+
+/* Уберём кнопки карусели в режиме телефон */
+@media (max-width: 755px) {
+    .carousel-indicators {
+        display: none;
+    }
+}
+

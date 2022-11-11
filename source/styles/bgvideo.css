@@ -1,0 +1,34 @@
+.bgvideo {
+    width: 100%;
+    height: 70vh; /* 70% от высоты просмотра браузера */
+    position: relative;
+    display: flex; /* для задания слоёв для видео и текста "Future's here"*/
+    justify-content: center;
+    align-items: center;
+}   
+
+.bgvideo video {
+    width: 100%;
+    height: 70vh; /* 70% от высоты просмотра браузера */
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 1; /* слой */
+}
+
+.effect {
+    width: 100%;
+    height: 70vh; /* 70% от высоты просмотра браузера */
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: 2; /* слой */
+    background-color: rgba(0, 0, 0, 0.329);
+}
+
+.video-text {
+    color: white;
+    z-index: 2; /* слой */
+}

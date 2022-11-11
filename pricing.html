@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Копируем ссылку для подключения к серверу bootstrap из https://getbootstrap.com/docs/5.2/getting-started/download/ -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="source/styles/mycss.css">
+  <title>HiT</title>
+</head>
+
+<body>
+  <!-- Тег header позволяет указать что это шапка с навигационной панелью | Для наглядности -->
+  <header>
+    <nav class="navbar navbar-expand-lg bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="source/files/logo.png" alt="logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="pricing.html">Pricing</a>
+              <!-- класс active подсветит кнопку Pricing когда мы перейдём на страницу pricing.html | стиль этого класса уже прописан на сайте bs -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">
+                <img style="width: 30px; margin-inline: 1em" src="source/files/yt.png" alt="...">
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pricing.html">
+                <img style="width: 25px; margin-inline: 1em" src="source/files/tg.png" alt="...">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Тег section указывает на основной контент на сайте -->
+  <section>
+    <!-- https://getbootstrap.com/docs/5.2/layout/containers/ 
+    Копируем .container-fluid -> Вставляем сюда и создаётся класс | mt-4 это синтаксис bs означает margin-top = 1.5rem (смотри скрин рядом с index.html) -->
+    <div class="container-fluid mt-4">
+      <!-- https://getbootstrap.com/docs/5.2/layout/grid/
+      Копируем из первого варианта сеток код <div class="row"...> под классом <div class="container text-center">
+      Сам этот класс "container text-center" не копируем, вместо него мы уже скопировали нужный "container-fluid"-->
+      <div class="row"> <!-- этот тег с классом row мы уже сделали сами для разбития сайта на секции -->
+        <div class="col-lg-1"> <!-- этот тег с таким классом значит что мы выделили слева 1 долю из 12 для боковой панели -->
+          
+        </div>
+        <div class="col-lg-8 col-md-12"> <!-- этот тег с таким классом значит что мы выделили 8 долей из 12 для карточек товаров | при переходе на планшетный вариант будет по ширине занимать 12 долей -->
+          <div class="row">
+            <!-- Модернизируем класс "col" допишем "-lg-4" это значит на широкоформатном экране (lg) колонки будут занимать 3 доли из 12 -->
+            <!-- И ещё раз модернизируем класс "col-lg-4" допишем "col=md-6" это значит на планшете (md) колонки будут занимать 6 долей из 12 -->
+            <div class="col-lg-4 col-md-6 mt-4">
+              <!-- Здесь будет текст Column -> вместо него вставляем код карточки из https://getbootstrap.com/docs/5.2/components/card/ -->
+              <div class="card">
+                <!-- Вставляем в src заготовленую картинку -->
+                <!-- Уберём прописанный изначально стиль style="width: 18rem;" -->
+                <img src="source/images/laptop.png" class="card-img-top" alt="laptop">
+                <div class="card-body">
+                  <h5 class="card-title">Laptops</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <a href="#"><img src="source/images/gaming pc.png" class="card-img-top" alt="gaming pc"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><a href="#">Gaming PC</a></h5>
+                  <p class="card-text"><a href="#">
+                    Some quick example text to build on the card title and make up the bulk of the
+                      card's
+                      content.
+                  </a></p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <img src="source/images/vr.png" class="card-img-top" alt="vr">
+                <div class="card-body">
+                  <h5 class="card-title">VR</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <img src="source/images/gpu.png" class="card-img-top" alt="gpu">
+                <div class="card-body">
+                  <h5 class="card-title">GPU</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <img src="source/images/cpu.png" class="card-img-top" alt="cpu">
+                <div class="card-body">
+                  <h5 class="card-title">CPU</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <img src="source/images/controller.png" class="card-img-top" alt="controller">
+                <div class="card-body">
+                  <h5 class="card-title">Controllers</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <img src="source/images/acc.png" class="card-img-top" alt="acc">
+                <div class="card-body">
+                  <h5 class="card-title">ACC</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mt-4">
+              <div class="card">
+                <img src="source/images/other.png" class="card-img-top" alt="other">
+                <div class="card-body">
+                  <h5 class="card-title">Other</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                  <a href="#" class="btn btn-primary">Buy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-12"> <!-- этот тег с таким классом значит что мы выделили оставшиеся 3 доли из 12 для боковой панели | при переходе на планшетный вариант будет по ширине занимать 12 долей -->
+          <div class="row px-2">
+            <div class="col-lg-12 sidebar my-4">  <!-- теперь боковые 3 доли родительского класса делим на 12 долей (у bs всё кратно 12ти) | sidebar - это уже наш класс для обращения к тегу div -->
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aut tempore mollitia quae totam, repellat aliquid distinctio corrupti. Neque voluptates eligendi quasi dicta officia delectus? <a href="#">Learn more>>></a></p>
+            </div>
+            <div class="col-lg-12 sidebar my-4">  <!-- теперь боковые 3 доли родительского класса делим на 12 долей (у bs всё кратно 12ти) | sidebar - это уже наш класс для обращения к тегу div -->
+              <p>consectetur adipisicing elit. Debitis aut tempore mollitia quae totam, repellat aliquid distinctio corrupti. Neque voluptates eligendi quasi dicta officia delectus? <a href="#">Learn more>>></a></p>
+            </div>
+            <div class="col-lg-12 sidebar my-4">  <!-- теперь боковые 3 доли родительского класса делим на 12 долей (у bs всё кратно 12ти) | sidebar - это уже наш класс для обращения к тегу div -->
+              <p>Lorem ipsum dolor sit repellat aliquid distinctio corrupti. Neque voluptates eligendi quasi dicta officia delectus? <a href="#">Learn more>>></a></p>
+            </div>
+            <div class="col-lg-12 sidebar my-4">  <!-- теперь боковые 3 доли родительского класса делим на 12 долей (у bs всё кратно 12ти) | sidebar - это уже наш класс для обращения к тегу div -->
+              <p>Lorem ipsum dolor sit ameipisicing elit. Debitis aut tempore mollitia quae totam, repellat aliquid distinctio corrupti. Neque voluptates eligendi quasi dicta officia delectus? <a href="#">Learn more>>></a></p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Тег footer для всякой служебной информации (контакты, информация защищена и т.д.) -->
+  <footer class="mt-4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-12 footer-text text-center"> <!-- text-center - стандартный класс bs -->
+          <p>All Rights Reserved 2022</p>
+        </div>
+        <div class="col-lg-4 col-md-12 footer-text text-center">
+          <p>Contacts<br>Job</br>Our Team</p>
+        </div>
+        <div class="col-lg-4 col-md-12 media-links">
+          <img style="width: 40px; margin-inline: 1em" src="source/files/yt.png" alt="...">
+          <img style="width: 40px; margin-inline: 1em" src="source/files/tg.png" alt="...">
+        </div>          
+      </div>
+    </div>
+  </footer>
+
+  <!-- Размещаем ссылку для javascript в конце тега body для ускороения загрузки нашего сайта -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
